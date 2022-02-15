@@ -43,11 +43,12 @@ main {
 
 .grid{
   border: 1px solid black;
-  width: 40px;
-  height: 40px;
+  width: calc(100% / 7);
+  aspect-ratio: 1;
   display: flex;
   justify-content: center;
   align-content: center;
+  align-items: center;
 }
 
 
