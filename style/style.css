@@ -31,20 +31,23 @@ header > .container {
 /* main */
 main {
   background-color: #7fffd4;
-  height: 300px;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container-grid {
   border: 1px solid black;
   display: flex;
-  justify-content: center;
-  align-content: center;
+  flex-flow: row wrap;
+  width: 300px;
 }
 
 .grid{
-  border: 1px solid black;
   width: calc(100% / 7);
   aspect-ratio: 1;
+  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-content: center;
