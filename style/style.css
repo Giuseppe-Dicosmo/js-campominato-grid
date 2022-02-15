@@ -31,27 +31,31 @@ header > .container {
 /* main */
 main {
   background-color: #7fffd4;
+}
+
+.container-grid {
   height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.container-grid {
+.grid{
   border: 1px solid black;
+  width: 400px;
+  aspect-ratio: 1 / 1;
   display: flex;
-  flex-flow: row wrap;
-  width: 300px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
 }
 
-.grid{
-  width: calc(100% / 7);
-  aspect-ratio: 1;
+.cel{
   border: 1px solid black;
+  aspect-ratio: 1 / 1;
   display: flex;
-  justify-content: center;
-  align-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 
