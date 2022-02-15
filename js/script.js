@@ -10,54 +10,43 @@ console.log("difficolta2", difficolta2)
 const difficolta3 = document.getElementById('difficile');
 console.log("difficolta3", difficolta3)
 
+const container = document.querySelector('.grid');
+console.log("container", container)
 
-const grid = document.querySelector('.grid');
-console.log("container", grid)
+
 
 buttonPlay.addEventListener('click', function() {
 
   const difficolta = document.getElementById('difficoltà').value;
   console.log("difficolta3", difficolta)
 
-  if (difficolta === 'Facile') {
 
-    for (let i = 0; i < 49; i++) {
-      const cella = document.createElement('div')
-      cella.classList.add('cel')
-      grid.append(cella)
-      cella.style.width = `calc(100% / 7)`
-
-      cella.innerHTML = `${i}`
-    }
-
-  } else if (difficolta === 'Medio') {
-
-    for (let i = 0; i < 81; i++) {
-      const cella = document.createElement('div')
-      cella.classList.add('cel')
-      grid.append(cella)
-      cella.style.width = `calc(100% / 9)`
-
-      cella.innerHTML = `${i}`
-    }
-
-  } else if (difficolta === 'Difficile') {
-
-    for (let i = 0; i < 1000; i++) {
-      const cella = document.createElement('div')
-      cella.classList.add('cel')
-      grid.append(cella)
-      cella.style.width = `calc(100% / 10)`
-
-      cella.innerHTML = `${i}`
-    }
-
+  // Mi legge i valori
+  if (difficolta == 'Facile') {
+    elementi = 49
+    colonne = 7
+  } else if (difficolta == 'Medio') {
+    elementi = 81
+    colonne = 9
+  } else if (difficolta == 'Difficile') {
+    elementi = 100
+    colonne = 10
   }
 
+  const grid = document.querySelector('.grid');
+  console.log("container", grid)
 
 
+  container.innerHTML = ``
 
+  for (let i = 0; i < elementi; i++) {
+    const cella = document.createElement('div')
+    cella.classList.add('cel')
+    grid.append(cella)
+    cella.style.width = `calc(100% / ${colonne})`
 
+    cella.innerHTML = `${i}`
+  }
 
 })
 
