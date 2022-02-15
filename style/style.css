@@ -1,0 +1,56 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* header */
+.container{
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+header > .container {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.titolo{
+  flex-grow: 1;
+}
+
+.cars{
+  width: 200px;
+}
+
+.play {
+  width: 100px;
+}
+
+/* main */
+main {
+  background-color: #7fffd4;
+  height: 300px;
+}
+
+.container-grid {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.grid{
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+
+
+
+
