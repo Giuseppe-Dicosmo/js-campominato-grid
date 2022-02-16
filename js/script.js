@@ -6,8 +6,8 @@ console.log("button play", play)
 const grid = document.querySelector('.grid');
 console.log("container", grid)
 
-buttonPlay.addEventListener('click', function() {
-
+// Funzione griglia
+const startPlay = () => {
   const difficolta = document.getElementById('difficoltà').value;
   console.log("difficolta5", difficolta)
 
@@ -23,7 +23,7 @@ buttonPlay.addEventListener('click', function() {
     righe = colonne = 7
   }
 
-  let elementi = righe * colonne;
+  elementi = righe * colonne;
 
   // mi cancella la griglia
   grid.innerHTML = ``
@@ -38,7 +38,18 @@ buttonPlay.addEventListener('click', function() {
     cella.innerHTML = `${i + 1}`
   }
 
-})
+}
+// Funzione Bombe random.
+const bombeRandom = (min, max) => {
+
+  return Math.floor(Math.random() * (max - min + 1) + min);
+
+}
+
+let numeropc = bombeRandom(1, elementi)
+console.log("bombeRandom", numeropc)
+
+buttonPlay.addEventListener('click', startPlay,bombeRandom)
 
 
 
