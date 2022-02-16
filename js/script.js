@@ -9,7 +9,7 @@ console.log("container", grid)
 
 let elementi;
 let arrayBombe = [];
-console.log("arrayBombe1", arrayBombe)
+// console.log("arrayBombe1", arrayBombe)
 
 // Funzione griglia
 const startPlay = () => {
@@ -31,6 +31,7 @@ const startPlay = () => {
   elementi = righe * colonne;
 
   arrayBombe = bombeRandom(1, elementi)
+  console.log("numeroRadnom 111", arrayBombe)
 
   // mi cancella la griglia
   grid.innerHTML = ``
@@ -56,13 +57,13 @@ const bombeRandom = (min, max) => {
   // console.log("i", i)
 
   let numeroRadnom = Math.floor(Math.random() * (max - min + 1) + min);
-  console.log("numeroRadnom", numeroRadnom)
   arrayBombe.push(numeroRadnom)
   }
 
   // do {
-  //   const num = bombeRandom = (min, max)
+  //   const num = numeroRadnom
   //   if (!arrayBombe.includes(num) ) {
+  //     arrayBombe.push(numeroRadnom)
 
   //   }
   // } while (arrayBombe.length < elementi)
@@ -74,14 +75,22 @@ const bombeRandom = (min, max) => {
 buttonPlay.addEventListener('click', startPlay)
 
 
-
+// mi colora le celle
 grid.addEventListener('click', function(event){
   console.log("celEveni ciao", event)
 
   const selectorCell = event.target
   console.log("selectorCell", selectorCell)
 
-  selectorCell.style.background = `#ff0000`;
+
+  if (arrayBombe.includes(parseInt (selectorCell.innerHTML))){
+    selectorCell.classList.add('bomba');
+    alert('hai perso')
+    arrayBombe.classList.add('bomba');
+
+  } else if (!arrayBombe.includes(parseInt (selectorCell.innerHTML))) {
+    selectorCell.classList.add('win');
+  }
 
 })
 
