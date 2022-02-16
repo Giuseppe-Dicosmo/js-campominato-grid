@@ -9,6 +9,7 @@ console.log("container", grid)
 
 let elementi;
 let arrayBombe = [];
+console.log("arrayBombe1", arrayBombe)
 
 // Funzione griglia
 const startPlay = () => {
@@ -41,31 +42,48 @@ const startPlay = () => {
     grid.append(cella)
     cella.style.width = `calc(100% / ${colonne})`
     cella.innerHTML = `${i + 1}`
-
-
   }
 
 }
 
 
+
 // Funzione Bombe random.
 const bombeRandom = (min, max) => {
   let arrayBombe = [];
-  console.log("arrayBombe", arrayBombe)
 
   for (let i = 0; i < 16; i++) {
-  console.log("i", i)
+  // console.log("i", i)
 
   let numeroRadnom = Math.floor(Math.random() * (max - min + 1) + min);
   console.log("numeroRadnom", numeroRadnom)
   arrayBombe.push(numeroRadnom)
   }
 
+  // do {
+  //   const num = bombeRandom = (min, max)
+  //   if (!arrayBombe.includes(num) ) {
+
+  //   }
+  // } while (arrayBombe.length < elementi)
+
   return arrayBombe
 }
 
-gri
 
 buttonPlay.addEventListener('click', startPlay)
+
+
+
+grid.addEventListener('click', function(event){
+  console.log("celEveni ciao", event)
+
+  const selectorCell = event.target
+  console.log("selectorCell", selectorCell)
+
+  selectorCell.style.background = `#ff0000`;
+
+})
+
 
 
