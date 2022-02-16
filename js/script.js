@@ -6,6 +6,8 @@ console.log("button play", play)
 const grid = document.querySelector('.grid');
 console.log("container", grid)
 
+let elementi;
+
 // Funzione griglia
 const startPlay = () => {
   const difficolta = document.getElementById('difficoltà').value;
@@ -25,6 +27,7 @@ const startPlay = () => {
 
   elementi = righe * colonne;
 
+
   // mi cancella la griglia
   grid.innerHTML = ``
 
@@ -39,17 +42,31 @@ const startPlay = () => {
   }
 
 }
+
 // Funzione Bombe random.
 const bombeRandom = (min, max) => {
+  let arrayBombe = [];
+  console.log("arrayBombe", arrayBombe)
 
-  return Math.floor(Math.random() * (max - min + 1) + min);
+  for (let i = 0; i < 16; i++) {
+  console.log("i", i)
 
+  let numeroRadnom = Math.floor(Math.random() * (max - min + 1) + min);
+  console.log("numeroRadnom", numeroRadnom)
+  arrayBombe.push(numeroRadnom)
+
+  }
+
+  return arrayBombe
 }
 
-let numeropc = bombeRandom(1, elementi)
-console.log("bombeRandom", numeropc)
+bombeRandom(1, elementi)
 
-buttonPlay.addEventListener('click', startPlay,bombeRandom)
+
+
+buttonPlay.addEventListener('click', startPlay)
+// let numeropc = bombeRandom(1, elementi)
+// console.log("bombeRandom", numeropc)
 
 
 
