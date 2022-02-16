@@ -18,6 +18,12 @@ header > .container {
 
 .titolo{
   flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.titolo > img{
+  margin-right: 10px;
 }
 
 .cars{
@@ -25,12 +31,52 @@ header > .container {
 }
 
 .play {
-  width: 100px;
+  background-image: linear-gradient(to right, #CC95C0 0%, #DBD4B4  51%, #CC95C0  100%);
 }
 
+.play {
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  background-image: linear-gradient(
+  124deg,
+  hsl(345deg 100% 42%) 0%,
+  hsl(63deg 55% 51%) 19%,
+  hsl(132deg 41% 62%) 35%,
+  hsl(191deg 86% 35%) 48%,
+  hsl(235deg 78% 34%) 56%,
+  hsl(267deg 100% 7%) 56%
+  );
+  box-shadow: 0 0 20px #eee;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+}
+
+.play:hover {
+  background-position: right center;
+  text-decoration: none;
+}
+
+
 /* main */
-main {
-  background-color: #7fffd4;
+body {
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+    124deg,
+    hsl(345deg 100% 42%) 0%,
+    hsl(63deg 55% 51%) 19%,
+    hsl(132deg 41% 62%) 35%,
+    hsl(191deg 86% 35%) 48%,
+    hsl(235deg 78% 34%) 56%,
+    hsl(267deg 100% 7%) 56%
+  );
+}
+
+main{
 }
 
 .container-grid {
@@ -38,6 +84,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-grow: 1;
 }
 
 .grid{
@@ -50,12 +97,24 @@ main {
 }
 
 .cel{
-  border: 1px solid black;
-  background-color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: transparent;
+  color: white;
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* footer */
+header, footer {
+  background-color: transparent;
+  color: white;
+}
+
+footer > .container {
+  height: calc(20vh - 70px);
 }
 
 
