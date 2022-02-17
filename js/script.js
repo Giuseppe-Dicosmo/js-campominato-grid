@@ -80,37 +80,39 @@ buttonPlay.addEventListener('click', startPlay)
 
 
 // mi colora le celle
-grid.addEventListener('click', function(event){
+grid.addEventListener('click', checkSquare)
+
+function checkSquare(event){
   console.log("celEveni ciao", event)
 
-  const selectorCell = event.target
+  const selectorCell = event.target;
   console.log("selectorCell", selectorCell)
 
 
-  if (arrayBombe.includes(parseInt (selectorCell.innerHTML))){
+  if (arrayBombe.includes(parseInt(selectorCell.innerHTML))){
     selectorCell.classList.add('bomba');
 
-    gameOver(score)
+    gameOver(score);
+    grid.removeEventListener('click', checkSquare)
 
-    grid.removeEventListener('click' (event))
 
-
-  } else if (!arrayBombe.includes(parseInt (selectorCell.innerHTML))) {
+  } else if (!arrayBombe.includes(parseInt(selectorCell.innerHTML))) {
     selectorCell.classList.add('win');
-
     score++
-    wingame(score)
-  }
 
-})
+    // wingame(score)
+  }
+}
+
 
 const gameOver = (score) => {
   alert(`hai perso hai totalizzato tot ${score} punti`)
 }
 
-const wingame = (score) => {
-  console.log(`hai totalizzato tot ${score} punti`)
-}
+
+// const wingame = (score) => {
+//   console.log(`hai totalizzato tot ${score} punti`)
+// }
 
 
 
