@@ -30,7 +30,7 @@ const startPlay = () => {
 
   elementi = righe * colonne;
 
-  arrayBombe = bombeRandom(1, elementi)
+  arrayBombe = bombeRandom(16, 1, elementi)
   console.log("numeroRadnom 111", arrayBombe)
 
   // mi cancella la griglia
@@ -50,25 +50,27 @@ const startPlay = () => {
 
 
 // Funzione Bombe random.
-const bombeRandom = (min, max) => {
+const bombeRandom = (listabombe, min, max) => {
   let arrayBombe = [];
 
-  for (let i = 0; i < 16; i++) {
-  // console.log("i", i)
+  do {
+    const num = getRandomIntInclusive(min, max)
 
-  let numeroRadnom = Math.floor(Math.random() * (max - min + 1) + min);
-  arrayBombe.push(numeroRadnom)
-  }
+    if (!arrayBombe.includes(num)) {
 
-  // do {
-  //   const num = numeroRadnom
-  //   if (!arrayBombe.includes(num) ) {
-  //     arrayBombe.push(numeroRadnom)
+      arrayBombe.push(num)
 
-  //   }
-  // } while (arrayBombe.length < elementi)
+    }
+  } while (arrayBombe.length < listabombe)
 
   return arrayBombe
+}
+
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 
@@ -86,6 +88,7 @@ grid.addEventListener('click', function(event){
   if (arrayBombe.includes(parseInt (selectorCell.innerHTML))){
     selectorCell.classList.add('bomba');
     alert('hai perso')
+
     arrayBombe.classList.add('bomba');
 
   } else if (!arrayBombe.includes(parseInt (selectorCell.innerHTML))) {
