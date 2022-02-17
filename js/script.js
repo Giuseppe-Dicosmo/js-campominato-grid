@@ -9,9 +9,8 @@ console.log("container", grid)
 
 let elementi;
 let arrayBombe = [];
-let score = 0
-console.log("score", score)
 
+let score = 0
 
 // Funzione griglia
 const startPlay = () => {
@@ -20,6 +19,7 @@ const startPlay = () => {
 
   // dichiaro i valori
   let righe, colonne;
+  console.log("score", score)
 
   // Mi legge i valori
   if (difficolta == 'Facile') {
@@ -89,16 +89,29 @@ grid.addEventListener('click', function(event){
 
   if (arrayBombe.includes(parseInt (selectorCell.innerHTML))){
     selectorCell.classList.add('bomba');
-    alert('hai perso')
 
-    grid.removeEventListener('click', event)
+    gameOver(score)
+
+    grid.removeEventListener('click' (event))
+
 
   } else if (!arrayBombe.includes(parseInt (selectorCell.innerHTML))) {
     selectorCell.classList.add('win');
+
     score++
+    wingame(score)
   }
 
 })
+
+const gameOver = (score) => {
+  alert(`hai perso hai totalizzato tot ${score} punti`)
+}
+
+const wingame = (score) => {
+  console.log(`hai totalizzato tot ${score} punti`)
+}
+
 
 
 
