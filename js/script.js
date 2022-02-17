@@ -9,7 +9,9 @@ console.log("container", grid)
 
 let elementi;
 let arrayBombe = [];
-// console.log("arrayBombe1", arrayBombe)
+let score = 0
+console.log("score", score)
+
 
 // Funzione griglia
 const startPlay = () => {
@@ -89,10 +91,11 @@ grid.addEventListener('click', function(event){
     selectorCell.classList.add('bomba');
     alert('hai perso')
 
-    arrayBombe.classList.add('bomba');
+    grid.removeEventListener('click', event)
 
   } else if (!arrayBombe.includes(parseInt (selectorCell.innerHTML))) {
     selectorCell.classList.add('win');
+    score++
   }
 
 })
